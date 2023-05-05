@@ -1,7 +1,7 @@
 function reverseString(str){
-    str = [...str].reverse().join('');
-    return str;
+    const strin = [...str].reverse().join('')
 
+    return strin
 }
 
-console.log(reverseString('hello world'));
+console.log(reverseString('hello word'))
