@@ -1,6 +1,6 @@
 function factorielle (nb){
     let nbList = [];
-    if (nb == 0){
+    if (nb === 0){
         return 1
     }
     do {
