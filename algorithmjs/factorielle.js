@@ -1,5 +1,8 @@
 function factorielle (nb){
     let nbList = [];
+    if (nb == 0){
+        return 1
+    }
     do {
         nbList.push(nb);
         nb = nb-1
@@ -11,4 +14,4 @@ function factorielle (nb){
 
 }
 
-console.log(factorielle(5))
+console.log(factorielle(0))
