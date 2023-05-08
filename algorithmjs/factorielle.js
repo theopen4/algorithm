@@ -15,3 +15,14 @@ function factorielle (nb){
 }
 
 console.log(factorielle(0))
+
+function facto(num){
+    if (num === 0){
+        return 1
+    }
+    for (i = num - 1; i > 1; i--){
+        num *= i
+    }
+    return num
+}
+console.log(facto(5))
