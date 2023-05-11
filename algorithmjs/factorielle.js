@@ -1,5 +1,5 @@
 function factorielle (nb){
-    let nbList = [];
+    const nbList = [];
     if (nb === 0){
         return 1
     }
@@ -14,7 +14,7 @@ function factorielle (nb){
 
 }
 
-console.log(factorielle(0))
+console.log(factorielle(10))
 
 function facto(num){
     if (num === 0){

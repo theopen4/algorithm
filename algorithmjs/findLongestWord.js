@@ -1,14 +1,15 @@
 //write a function whom return le word long
 // premiere maniere
-function findLongestWorld(str){
-    const arrayWorld = str.split(' ')
-    const lengthWorld = arrayWorld.map(arr => arr.length).reduce((worldLong, x) => Math.max(worldLong, x))
-    const worldlongs = arrayWorld.filter(w => w.length === lengthWorld) 
-    return worldlongs
+function findLongestWorlds(str){
+    const arrWorld = str.split(' ')
+    const lenWorld = arrWorld.map(l => l.length).reduce((long, x) => Math.max(long, x))
+    const wordLongs = arrWorld.filter(w => w.length === lenWorld)
+    return wordLongs
+
 }
 
 
-console.log(findLongestWorld( "bonjour cedric tu risque echouer "))
+console.log(findLongestWorlds( "bonjour cedric tu risque echouer "))
 //deuxieme maniere
 function findLongestWorld(str){
      const arrWorld = str.split(' ')
@@ -24,3 +25,4 @@ function findLongestWorld(str){
      return wordLongs
 }
 console.log(findLongestWorld( "bonjour ced bonjour"))
+
