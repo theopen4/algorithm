@@ -5,4 +5,4 @@ function truncateString(str, num){
     return str.slice(0, num) + '...'
     
 }
-console.log(truncateString('string merci',8))
+console.log(truncateString('string merci',7))
