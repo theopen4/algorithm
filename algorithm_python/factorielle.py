@@ -12,5 +12,5 @@ def recur_factorielle(nb):
        return 1
    return nb * recur_factorielle(nb - 1)
 
-print(recur_factorielle(6))  
+print(recur_factorielle(6)) 
  
