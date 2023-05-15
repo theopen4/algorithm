@@ -13,3 +13,14 @@ function titleCase(str){
 }
 console.log(titleCase('bonjour samuel ces vraiment gentil'))
 
+function titleCase2(str){
+    str = str.toLowerCase().split(' ');
+    let finallyWord = []
+    for(let word of str){
+        finallyWord.push(word.replace(word[0], word[0].toUpperCase()));
+    }
+    return finallyWord.join(' ');
+}
+
+console.log(titleCase2('ces de sa quil sagit'))
+
