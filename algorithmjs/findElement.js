@@ -1,3 +1,4 @@
+// this function return the number who verify the function in this function
 function findElement(arr, fn){
     let num = 0;
     for (let d of arr){

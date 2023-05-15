@@ -11,6 +11,7 @@ function titleCase(str){
     return wordUpperCase;
 
 }
+// this function return the first element of an array to uppercase
 console.log(titleCase('bonjour samuel ces vraiment gentil'))
 
 function titleCase2(str){
