@@ -12,3 +12,6 @@ def intervalle_pair(inf: int or float, sup: int or float)->list[int]:
     return number_pair
 
 print(intervalle_pair(1,100))
+
+for i in range(1, 100):
+    print("{} : {}".format(i,pair(i)))
