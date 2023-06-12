@@ -9,6 +9,7 @@ import { TodoListItems } from './TodoListItems.js';
 
 export class Todolists {
   #todos = [];
+  #listElement;
   constructor(todos) {
     this.#todos = todos;
   }
@@ -42,10 +43,10 @@ export class Todolists {
     </ul>
   <button class="btn-closee" >bonsoirr</button>
   </main> </div>`;
-    const list = element.querySelector('.list-groups');
+    this.#listElement = element.querySelector('.list-groups');
     for (const todo of this.#todos) {
       const item = new TodoListItems(todo);
-      item.appendTOO(list);
+      item.appendTOO(this.#listElement);
     }
     element
       .querySelector('.btn-closee')
@@ -56,6 +57,7 @@ export class Todolists {
   }
   onSubmit(event) {
     event.preventDefault();
+    const form = event.currentTarget;
     const title = new FormData(event.currentTarget)
       .get('title')
       .toString()
@@ -64,6 +66,14 @@ export class Todolists {
     if (title === '') {
       return;
     }
+    const todo = {
+      id: Date.now(),
+      title,
+      completed: false,
+    };
+    const item = new TodoListItems(todo);
+    item.appendTOO(this.#listElement);
+    form.reset();
   }
   testButton(e) {
     console.log(e.currentTarget);
