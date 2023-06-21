@@ -1,5 +1,14 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+mongoose
+  .connect('mongodb+srv://open:cedric56@cluster-openclass.vchtskl.mongodb.net/')
+  .then(() => {
+    console.log('connection successful');
+  })
+  .catch((err) => {
+    console.log(`connection failed ${err}`);
+  });
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -12,10 +21,11 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use(express.json());
 app.get('/', (req, res, next) => {
   res.json({ message: 'voici la reponse' });
 });
-app.use('/api/stuff', (req, res, next) => {
+app.get('/api/stuff', (req, res, next) => {
   const stuff = [
     {
       _id: 'oeihfzeoi',
@@ -37,5 +47,9 @@ app.use('/api/stuff', (req, res, next) => {
     },
   ];
   res.status(200).json(stuff);
+});
+app.post('/api/stuff', (req, res, next) => {
+  console.log(req.body);
+  res.status(201).json({ message: 'objet cree' });
 });
 module.exports = app;
